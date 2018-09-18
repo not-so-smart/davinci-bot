@@ -1,5 +1,4 @@
-const { prefix, adminPrefix } = require('../config.json');
-const { StaffRoles } = require('../roles.json');
+const { StaffRoles } = require('../data/roles.json');
 
 function getAccessLevel(mem) {
     const x = mem.roles.array();
@@ -20,6 +19,7 @@ module.exports = {
     cooldown: 3,
     execute(message, args) {
         const { commands } = message.client;
+        const { prefix, adminPrefix } = message.client.customShit;
         let admin = 0;
         if (message.content.startsWith(message.client.customShit.adminPrefix)) admin = getAccessLevel(message.member);
         var data = '';

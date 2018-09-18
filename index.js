@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const fs = require('fs');
 
 const client = new Discord.Client();
-const config = require('./config.json');
-const { StaffRoles } = require('./roles.json');
+const config = require('./data/config.json');
+const { StaffRoles } = require('./data/roles.json');
 const cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
 passiveFunctions = new Object();
@@ -77,7 +77,7 @@ function getAccessLevel(mem) {
 client.saveConfig = function () {
     const data = this.customShit;
     if (data && typeof data == 'object') {
-        fs.writeFile('./config.json', JSON.stringify(data, null, '\t'), (err) => {
+        fs.writeFile('./data/config.json', JSON.stringify(data, null, '\t'), (err) => {
             if (err) console.error(err);
             else console.log('Saved config settings.');
         });

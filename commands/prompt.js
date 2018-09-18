@@ -1,4 +1,4 @@
-const { prompts, prefixes } = require('../prompts.json');
+const { prompts, prefixes } = require('../data/prompts.json');
 module.exports = {
     name: 'prompt',
     displayName: 'Prompt',

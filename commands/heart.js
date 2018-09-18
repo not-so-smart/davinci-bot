@@ -1,5 +1,5 @@
 const { Users } = require('../dbObjects.js');
-const { CommunityRoles } = require('../roles.json');
+const { CommunityRoles } = require('../data/roles.json');
 
 function findRole(member, roleObject) {
     const x = member.roles.array();

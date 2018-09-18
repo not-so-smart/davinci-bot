@@ -1,4 +1,4 @@
-const { definitions } = require('../definitions.json');
+const { definitions } = require('../data/definitions.json');
 
 module.exports = {
     name: 'define',

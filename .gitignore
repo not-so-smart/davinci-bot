@@ -1,4 +1,6 @@
 backup/
 node_modules/
+data/config.json
+data/roles.json
 database.sqlite
 sqlite3.exe
