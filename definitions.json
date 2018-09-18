@@ -1,0 +1,14 @@
+{
+    "definitions": [
+        {
+            "name": "word",
+            "aliases": ["optional", "alternative", "terms"],
+            "definition": "The entire bot response, including formatting, links, etc"
+        },
+        {
+            "name": "test",
+            "aliases": ["testing", "tester"],
+            "definition": "**Test** is a word that means various things such as quiz or w/e idk"
+        }
+    ]
+}

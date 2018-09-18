@@ -1,0 +1,25 @@
+{
+	"prefix": "dv!",
+	"adminPrefix": "dv@",
+	"autoRoles": {
+	},
+	"selfRoles": {
+		"458799317529133079": "Talkative",
+		"480800414850351114": "Analyst",
+		"488425889944698881": "Events"
+	},
+	"chatFilter": [
+		"nigger",
+		"nigga",
+		"faggot",
+		"retard",
+		"cunt",
+		"nibba",
+		"ni🅱🅱a",
+		"fag"
+	],
+	"welcomeMessage": "Welcome to Epichroma, [[USER]]. Be sure to check <#429419070312677376> for important information on the server. <:kawaii:431898167106207755>",
+	"welcomeChannel": "461397263592325120",
+	"reportChannel": "454380478238031898",
+	"token": "NDYyMDUzNTMwMzIxMjg5MjE2.DhcQhA.Uck4jhY6B0xHDILuWPpSdWN2t1E"
+}

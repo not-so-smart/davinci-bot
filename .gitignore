@@ -1,0 +1,4 @@
+backup/
+node_modules/
+database.sqlite
+sqlite3.exe
