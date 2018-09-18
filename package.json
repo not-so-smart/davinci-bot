@@ -8,11 +8,20 @@
     "stop": "kill $(tail pid.txt)",
     "test": "tail -f log.txt"
   },
-  "author": "num",
-  "license": "ISC",
+  "author": "not-so-smart",
+  "license": "UNLICENSED",
   "dependencies": {
     "discord.js": "^11.3.2",
     "sequelize": "^4.38.0",
     "sqlite3": "^4.0.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/not-so-smart/davinci-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/not-so-smart/davinci-bot/issues"
+  },
+  "homepage": "https://github.com/not-so-smart/davinci-bot#readme"
 }
