@@ -11,7 +11,7 @@
   "author": "not-so-smart",
   "license": "UNLICENSED",
   "dependencies": {
-    "canvas": "^2.0.0-alpha.12",
+    "canvas": "^2.0.0-alpha.16",
     "discord.js": "^11.3.2",
     "sequelize": "^4.38.0",
     "snekfetch": "^4.0.4",
