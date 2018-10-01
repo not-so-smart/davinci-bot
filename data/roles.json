@@ -29,35 +29,5 @@
             "name": "6-prophet",
             "value": 1000
         }
-    },
-    "SkillRoles": {
-        "429423478731571221": {
-            "name": "1-novice1",
-            "value": 1
-        },
-        "429423589091966988": {
-            "name": "2-novice2",
-            "value": 2
-        },
-        "429423833037013003": {
-            "name": "3-intermediate1",
-            "value": 3
-        },
-        "429423933553639427": {
-            "name": "4-intermediate2",
-            "value": 4
-        },
-        "429423973697323018": {
-            "name": "5-experienced",
-            "value": 5
-        },
-        "429424052512227338": {
-            "name": "6-advanced",
-            "value": 6
-        },
-        "429424068152786955": {
-            "name": "7-expert",
-            "value": 7
-        }
     }
 }
