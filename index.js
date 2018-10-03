@@ -36,7 +36,7 @@ function getDayUTC() {
     var yyyy = today.getUTCFullYear();
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
-    return mm + '/' + dd + '/' + yyyy;
+    return dd + '-' + mm + '-' + yyyy;
 }
 
 console.log(DM.day + ' - ' + getTimeUTC());
@@ -233,5 +233,5 @@ client.on('error', (error) => {
 });
 
 process.on('unhandledRejection', (error) => {
-    console.log('--- Unhandled Rejection --- ' + error.message);
+    console.log('--- Unhandled Rejection --- ' + error.message + '\n' + error.stack);
 });
