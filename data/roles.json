@@ -7,19 +7,19 @@
     "CommunityRoles": {
         "461410834544066561": {
             "name": "1-helpful",
-            "value": 1
+            "value": 5
         },
         "461410895579447300": {
-            "name": "2-upstanding",
-            "value": 10
+            "name": "2-virtuous",
+            "value": 25
         },
         "429424405668429844": {
             "name": "3-mentor",
-            "value": 50
+            "value": 100
         },
         "429646000869867549": {
-            "name": "4-benevolent",
-            "value": 200
+            "name": "4-teacher",
+            "value": 250
         },
         "429424474962657300": {
             "name": "5-saint",
