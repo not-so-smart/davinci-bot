@@ -184,7 +184,7 @@ client.on('message', async message => {
     }
 
     // Ghetto permissions check
-    //                         // This is bitwise XOR, fuck you                            // Because help is for everyone <33
+    //                            ⮦ This is bitwise XOR, fuck you                                             ⮦ Because help is for everyone <33
     if ((command.accessLevel > 0) ^ message.content.startsWith(client.customShit.adminPrefix) && command.name != 'help') return console.log('Wrong Prefix. (' + command.name + ', ' + message.author.tag + ')');
 
     if ((command.accessLevel || 0) > getAccessLevel(message.member)) return console.log('Access Denied. (' + command.name + ', ' + message.author.tag + ')');
@@ -201,8 +201,14 @@ client.on('message', async message => {
         const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 
         if (now < expirationTime) {
-            const timeLeft = (expirationTime - now) / 1000;
-            return message.channel.sendResolve(`⛔ Sorry ${message.member.displayName}, that command is on cooldown! Please wait ${timeLeft.toFixed(1)} second(s) before trying again.`);
+            let s = (expirationTime - now) / 1000;
+            let ms = s % 1000;
+            s = (s - ms) / 1000;
+            let secs = s % 60;
+            s = (s - secs) / 60;
+            let mins = s % 60;
+            const timeLeft = (mins ? mins + ' min(s), ' : '') + secs + ' sec(s)';
+            return message.channel.sendResolve(`⛔ Sorry ${message.member.displayName}, that command is on cooldown! Please wait ${timeLeft} before trying again.`);
         }
 
         timestamps.set(message.author.id, now);
