@@ -65,39 +65,39 @@ module.exports = {
         if (targetMember.id == initiatorMember.id) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} You can't give yourself a heart.`)
-            //    .then(msg => msg.delete(2000)); // 2 secs
+                .then(msg => msg.delete(2000)); // 2 secs
         }
 
         // Hearts blacklist </3
         if (['274831493648613377', '297842682007650305'].includes(targetMember.id)) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} Sorry, but **${targetMember.displayName}** doesn't deserve your heart.`)
-            //    .then(msg => msg.delete(10000)); // 10 secs
+                .then(msg => msg.delete(10000)); // 10 secs
         } else if (targetMember.id == '462053530321289216') {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} I love you too, but it simply wasn't meant to be. I'm sorry.`)
-            //    .then(msg => msg.delete(10000)); // 10 secs
+                .then(msg => msg.delete(10000)); // 10 secs
         }
 
         // Only one per day u.u
         if (hasGivenHeart) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} **${initiatorMember.displayName}**, you already gave away your heart today!\n\nHearts reset in: **${timeTillReset}**`)
-            //    .then(msg => msg.delete(10000)); // 10 secs
+                .then(msg => msg.delete(10000)); // 10 secs
         }
 
         // Filter out image-only posts!
         /*if (!message.content) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} Use your hearts for people who give helpful feedback, not just for art you like!`)
-            //    .then(msg => msg.delete(10000)); // 10 secs
+                .then(msg => msg.delete(10000)); // 10 secs
         }*/
 
         // Please don't spam and trade T.T
         if (targetMember.id == initiator.lastHeartID && targetMember.id == initiator.lastLastHeartID) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} You've given **${targetMember.displayName}** your heart twice in a row, how about finding somebody else this time?`)
-            //    .then(msg => msg.delete(10000)); // 10 secs
+                .then(msg => msg.delete(10000)); // 10 secs
         }
 
 
@@ -116,7 +116,7 @@ module.exports = {
             await target.save();
 
             message.channel.sendResolve(`{{epiheart}} **${initiatorMember.displayName}** has given **${targetMember.displayName}** their heart today!`)
-                .then(msg => msg.delete(1800000)); // 30 mins
+                .then(msg => msg.delete(3600000)); // 1 hour
 
             // Role handling B)
             const newRole = findNewRole(target.heartCount, CommunityRoles);
