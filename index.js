@@ -201,9 +201,7 @@ client.on('message', async message => {
         const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 
         if (now < expirationTime) {
-            let s = (expirationTime - now) / 1000;
-            let ms = s % 1000;
-            s = (s - ms) / 1000;
+            let s = Math.round((expirationTime - now) / 1000);
             let secs = s % 60;
             s = (s - secs) / 60;
             let mins = s % 60;
