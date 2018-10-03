@@ -1,0 +1,88 @@
+{
+    "meta": {
+        "size": [
+            500,
+            360
+        ],
+        "fonts": {
+            "Comic Sans": "comic.ttf",
+            "Ink Free": "inkfree.ttf"
+        }
+    },
+    "badges": {
+        "0": {
+            "name": "0",
+            "pos": [
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "1": {
+            "name": "1",
+            "pos": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    },
+    "name": {
+        "font": "60px Comic Sans",
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "left",
+        "pos": [
+            170,
+            82
+        ]
+    },
+    "av": {
+        "pos": [
+            34,
+            32,
+            70,
+            70
+        ]
+    },
+    "role": {
+        "pos": [
+            207,
+            256,
+            168,
+            43
+        ]
+    },
+    "hc": {
+        "font": "20px Comic Sans",
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "center",
+        "pos": [
+            455,
+            323
+        ]
+    },
+    "hg": {
+        "font": "20px Comic Sans",
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "center",
+        "pos": [
+            455,
+            275
+        ]
+    },
+    "join": {
+        "font": "20px Comic Sans",
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "center",
+        "pos": [
+            250,
+            340
+        ]
+    }
+}
