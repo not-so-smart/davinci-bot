@@ -110,7 +110,7 @@ client.on('messageReactionAdd', (reaction, user) => {
     const initiator = reaction.message.guild.member(user.id);
     const target = reaction.message.member;
     const message = reaction.message;
-    passiveFunctions.heartPassive(initiator, target, message);
+    passiveFunctions.heartPassive(initiator, target, message, reaction);
 });
 
 // Message handler
