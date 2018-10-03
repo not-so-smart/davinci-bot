@@ -87,11 +87,11 @@ module.exports = {
         }
 
         // Filter out image-only posts!
-        /*if (!message.content) {
+        if (!message.content) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} Use your hearts for people who give helpful feedback, not just for art you like!`)
                 .then(msg => msg.delete(10000)); // 10 secs
-        }*/
+        }
 
         // Please don't spam and trade T.T
         if (targetMember.id == initiator.lastHeartID && targetMember.id == initiator.lastLastHeartID) {
