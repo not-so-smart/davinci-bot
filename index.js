@@ -160,7 +160,7 @@ client.on('message', async message => {
     }
 
     // Per-message filtering/detection
-    if (getAccessLevel(message.member) < 1 && !message.author.bot) {
+    if (!message.author.bot && getAccessLevel(message.member) < 1) {
         let filtered = false;
         client.customShit.chatFilter.forEach(word => {
             if (message.content.toLowerCase().includes(word)) filtered = true;
