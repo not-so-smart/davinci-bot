@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: 0,
             allowNull: false,
         },
-        lastHeartGiven: {
+        lastHeartName: {
             type: DataTypes.STRING,
             defaultValue: null,
         },
@@ -22,13 +22,23 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             defaultValue: 0,
         },
-        lastHeartID: {
+        lastHeart0: {
             type: DataTypes.STRING,
             defaultValue: null,
         },
-        lastLastHeartID: {
+        lastHeart1: {
             type: DataTypes.STRING,
             defaultValue: null,
+        },
+        skin: {
+            type: DataTypes.STRING,
+            defaultValue: "default",
+            allowNull: false,
+        },
+        flags: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+            allowNull: false,
         }
     }, {
         timestamps: true,

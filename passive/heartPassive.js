@@ -95,7 +95,7 @@ module.exports = {
         }
 
         // Please don't spam and trade T.T
-        if (targetMember.id == initiator.lastHeartID && targetMember.id == initiator.lastLastHeartID) {
+        if (targetMember.id == initiator.lastHeart0 && targetMember.id == initiator.lastHeart1) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} You've given **${targetMember.displayName}** your heart twice in a row, how about finding somebody else this time?`)
                 .then(msg => msg.delete(10000)); // 10 secs
@@ -109,9 +109,9 @@ module.exports = {
         try {
             target.heartCount += 1;
             initiator.heartsGiven += 1;
-            initiator.lastHeartGiven = targetMember.displayName;
-            initiator.lastLastHeartID = initiator.lastHeartID;
-            initiator.lastHeartID = targetMember.id;
+            initiator.lastHeartName = targetMember.displayName;
+            initiator.lastHeart1 = initiator.lastHeart0;
+            initiator.lastHeart0 = targetMember.id;
             initiator.lastHeartTimestamp = now;
             await initiator.save();
             await target.save();
