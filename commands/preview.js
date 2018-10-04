@@ -23,6 +23,23 @@ function formatDate(date) {
     return dd + '-' + mm + '-' + yyyy;
 }
 
+function applyText(canvas, font, text, width) {
+    const ctx = canvas.getContext('2d');
+
+    // Declare a base size of the font
+    let fontSize = font.substr(0, font.indexOf('px'));
+    let fontFamily = font.substr(font.indexOf('px'));
+
+    do {
+        // Assign the font to the context and decrement it so it can be measured again
+        ctx.font = `${fontSize -= 1}${fontFamily}`;
+        // Compare pixel width of the text to the canvas minus the approximate avatar size
+    } while (ctx.measureText(text).width > width);
+
+    // Return the result to use in the actual canvas
+    return ctx.font;
+};
+
 module.exports = {
     name: 'preview',
     displayName: 'Preview',
@@ -46,14 +63,20 @@ module.exports = {
         const crId = findRole(targetMember, CommunityRoles);
         const communityRole = CommunityRoles[crId];
 
-        const skinName = 'shit-template';
+        const skinName = target.skin;
         const skinPath = path.resolve(process.mainModule.filename, '../templates/', skinName);
-        const skin = require(`${skinPath}/config.json`);
-        
+        let skin;
+        try {
+            skin = require(`${skinPath}/config.json`)
+        } catch (e) {
+            console.log('Error loading skin: ' + e.message);
+            return message.channel.send(':anger: Error loading skin!');
+        }
+
         for (const i in skin.meta.fonts) {
             if (skin.meta.fonts.hasOwnProperty(i)) {
                 const font = skin.meta.fonts[i];
-                Canvas.registerFont(`${skinPath}/fonts/${font}`, {family: i})
+                Canvas.registerFont(`${skinPath}/fonts/${font}`, { family: i })
             }
         }
 
@@ -67,18 +90,18 @@ module.exports = {
         const avatar = await Canvas.loadImage(buffer);
         ctx.drawImage(avatar, skin.av.pos[0], skin.av.pos[1], skin.av.pos[2], skin.av.pos[3]);
 
-        ctx.font = skin.name.font;
+        ctx.font = applyText(canvas, skin.name.font, targetMember.displayName, skin.name.maxWidth);
         ctx.fillStyle = skin.name.fillStyle;
         ctx.textBaseline = skin.name.fillStyle;
         ctx.textAlign = skin.name.textAlign;
         ctx.fillText(targetMember.displayName, skin.name.pos[0], skin.name.pos[1]);
 
-        if (communityRole) {
+        if (communityRole && skin.role) {
             const renderCR = await Canvas.loadImage(`${skinPath}/roles/${communityRole.name}.png`);
             ctx.drawImage(renderCR, skin.role.pos[0], skin.role.pos[1], skin.role.pos[2], skin.role.pos[3]);
         }
 
-        if (target.heartCount) {
+        if (target.heartCount && skin.hc) {
             ctx.font = skin.hc.font;
             ctx.fillStyle = skin.hc.fillStyle;
             ctx.textBaseline = skin.hc.textBaseline;
@@ -86,7 +109,7 @@ module.exports = {
             ctx.fillText(target.heartCount, skin.hc.pos[0], skin.hc.pos[1]);
         }
 
-        if (target.heartsGiven) {
+        if (target.heartsGiven && skin.hg) {
             ctx.font = skin.hg.font;
             ctx.fillStyle = skin.hg.fillStyle;
             ctx.textBaseline = skin.hg.textBaseline;
@@ -94,7 +117,7 @@ module.exports = {
             ctx.fillText(target.heartsGiven, skin.hg.pos[0], skin.hg.pos[1]);
         }
 
-        if (targetMember.joinedAt) {
+        if (targetMember.joinedAt && skin.join) {
             ctx.font = skin.join.font;
             ctx.fillStyle = skin.join.fillStyle;
             ctx.textBaseline = skin.join.textBaseline;
