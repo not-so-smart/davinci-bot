@@ -1,0 +1,78 @@
+{
+    "meta": {
+        "size": [
+            175,
+            300
+        ],
+        "fonts": {
+            "Ink Free": "inkfree.ttf"
+        }
+    },
+    "badges": {
+        "0": {
+            "name": "0",
+            "pos": [
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "1": {
+            "name": "1",
+            "pos": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    },
+    "name": {
+        "font": "21px Ink Free",
+        "maxWidth": 130,
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "center",
+        "pos": [
+            87, 
+            117 
+        ]
+    },
+    "av": {
+        "pos": [
+            52, 
+            26, 
+            70, 
+            70  
+        ]
+    },
+    "role": {
+        "pos": [
+            21,  
+            173, 
+            130, 
+            100 
+        ]
+    },
+    "hc": {
+        "font": "17px Ink Free",
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "center",
+        "pos": [
+            87, 
+            162
+        ]
+    },
+    "join": {
+        "font": "10px Ink Free",
+        "fillStyle": "#000000",
+        "textBaseline": "middle",
+        "textAlign": "center",
+        "pos": [
+            87,
+            129
+        ]
+    }
+}
