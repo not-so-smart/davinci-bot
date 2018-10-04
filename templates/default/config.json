@@ -29,14 +29,14 @@
         }
     },
     "name": {
-        "font": "20px Ink Free",
+        "font": "21px Ink Free",
         "maxWidth": 130,
         "fillStyle": "#000000",
         "textBaseline": "middle",
         "textAlign": "center",
         "pos": [
             87, 
-            118 
+            117 
         ]
     },
     "av": {
@@ -72,7 +72,7 @@
         "textAlign": "center",
         "pos": [
             87,
-            131
+            129
         ]
     }
 }
