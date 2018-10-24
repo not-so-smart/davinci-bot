@@ -7,11 +7,12 @@ const { CommunityRoles } = require('../data/roles.json');
 
 function findRole(member, roleObject) {
     const x = member.roles.array();
+    let role = false;
     for (let i = 0; i < x.length; i++) {
-        const role = x[i];
-        if (role.id in roleObject) return role.id;
+        const item = x[i];
+        if (roleObject.map(a => a.id).includes(item.id)) role = item.id;
     }
-    return false;
+    return role;
 }
 
 function formatDate(date) {
