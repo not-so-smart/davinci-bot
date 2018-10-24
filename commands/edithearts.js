@@ -6,15 +6,16 @@ function findRole(member, roleObject) {
     let role = false;
     for (let i = 0; i < x.length; i++) {
         const item = x[i];
-        if (item.id in roleObject) role = item.id;
+        if (roleObject.map(a => a.id).includes(item.id)) role = item.id;
     }
     return role;
 }
 
 function findNewRole(value, obj) {
-    let role;
-    if (value < obj[Object.keys(obj)[0]]) role = false;
-    else role = Object.keys(obj).reduce((a, b) => obj[b] > obj[a] && obj[b] <= value ? b : a);
+    let role = false;
+    for (const x of obj) {
+        if (x.value <= value) role = x.id
+    }
     return role;
 }
 
