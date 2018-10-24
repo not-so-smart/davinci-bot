@@ -61,7 +61,7 @@ module.exports = {
             .catch(error => console.error('Error finding or creating user:\n' + error));
 
         const crId = findRole(targetMember, CommunityRoles);
-        const communityRole = CommunityRoles[crId];
+        const communityRole = CommunityRoles[CommunityRoles.map(a => a.id).indexOf(crId)];
 
         const skinName = target.skin;
         const skinPath = path.resolve(process.mainModule.filename, '../templates/', skinName);
