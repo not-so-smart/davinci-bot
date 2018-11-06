@@ -70,7 +70,7 @@ module.exports = {
         }
 
         // Hearts blacklist </3
-        const blacklist = ['274831493648613377', '198197215225708545', '181008350471782408', '297842682007650305'];
+        const blacklist = ['274831493648613377', '181008350471782408', '297842682007650305'];
         if (blacklist.includes(targetMember.id)) {
             reaction.remove(initiatorMember);
             return message.channel.sendResolve(`{{epiheartbreak}} Sorry, but **${targetMember.displayName}** doesn't deserve your heart.`)
