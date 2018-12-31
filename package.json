@@ -1,7 +1,7 @@
 {
   "name": "davinci-bot",
   "version": "1.0.0",
-  "description": "DaVinci Discord Bot, for Epichroma Discord server",
+  "description": "DaVinci - server management utility",
   "main": "index.js",
   "scripts": {
     "start": "nohup node index.js > log.txt 2>&1 & echo $! > pid.txt",
